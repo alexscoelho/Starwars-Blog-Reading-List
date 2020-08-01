@@ -2,22 +2,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			planets: [
-				{
-					name: "test",
-					description:
-						"Some quick example text to build on the card title and make up the bulk of the cardscontent."
-				},
-				{
-					name: "test",
-					description:
-						"Some quick example text to build on the card title and make up the bulk of the cardscontent."
-				},
-				{
-					name: "test",
-					description:
-						"Some quick example text to build on the card title and make up the bulk of the cardscontent."
-				}
-			]
+				// {
+				// 	name: "test",
+				// 	description:
+				// 		"Some quick example text to build on the card title and make up the bulk of the cardscontent."
+				// },
+				// {
+				// 	name: "test",
+				// 	description:
+				// 		"Some quick example text to build on the card title and make up the bulk of the cardscontent."
+				// },
+				// {
+				// 	name: "test",
+				// 	description:
+				// 		"Some quick example text to build on the card title and make up the bulk of the cardscontent."
+				// }
+			],
+			characters: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -28,6 +29,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch("https://swapi.dev/api/planets/")
 					.then(res => res.json())
 					.then(data => setStore({ planets: data.results }));
+				/**
+					fetch().then().then(data => setStore({ "foo": data.bar }))
+				*/
+			},
+			getCharacters: () => {
+				fetch("https://swapi.dev/api/people/")
+					.then(res => res.json())
+					.then(data => setStore({ characters: data.results }));
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/

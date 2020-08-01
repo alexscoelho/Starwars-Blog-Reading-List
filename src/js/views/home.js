@@ -8,8 +8,9 @@ import { Row } from "../component/row";
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 	return (
-		<div className="container mt-5">
+		<div className="container">
 			<Row title="Planets" data={store.planets} />
+			<Row title="Characters" data={store.characters} />
 		</div>
 	);
 };

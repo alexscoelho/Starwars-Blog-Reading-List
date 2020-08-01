@@ -10,17 +10,17 @@ export const Row = props => {
 	const makeColumns = () => {
 		return data.map((item, index) => {
 			return (
-				<div key={index} className="col">
+				<div key={index} className="col-5">
 					<div className="card">
 						<img src="..." className="card-img-top" alt="..." />
 						<div className="card-body">
 							<h5 className="card-title">{item.name}</h5>
-							<p className="card-text">{item.description}</p>
+							{/* <p className="card-text">{item.description}</p> */}
 						</div>
 						<ul className="list-group list-group-flush">
-							<li className="list-group-item">Cras justo odio</li>
-							<li className="list-group-item">Dapibus ac facilisis in</li>
-							<li className="list-group-item">Vestibulum at eros</li>
+							<li className="list-group-item">{item.climate || item.gender}</li>
+							<li className="list-group-item">{item.population || item.mass}</li>
+							<li className="list-group-item">{item.terrain || item.birth_year}</li>
 						</ul>
 						<div className="card-body">
 							<a href="#" className="card-link">
@@ -38,7 +38,7 @@ export const Row = props => {
 	return (
 		<div>
 			<h2>{title}</h2>
-			<div className="row">{makeColumns()}</div>
+			<div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4">{makeColumns()}</div>
 		</div>
 	);
 };
