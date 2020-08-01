@@ -1,16 +1,21 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
+			planets: [
 				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
+					name: "test",
+					description:
+						"Some quick example text to build on the card title and make up the bulk of the cardscontent."
 				},
 				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
+					name: "test",
+					description:
+						"Some quick example text to build on the card title and make up the bulk of the cardscontent."
+				},
+				{
+					name: "test",
+					description:
+						"Some quick example text to build on the card title and make up the bulk of the cardscontent."
 				}
 			]
 		},
@@ -19,7 +24,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			loadSomeData: () => {
+			getPlanets: () => {
+				fetch("https://swapi.dev/api/planets/")
+					.then(res => res.json())
+					.then(data => setStore({ planets: data.results }));
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
