@@ -18,10 +18,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				// 		"Some quick example text to build on the card title and make up the bulk of the cardscontent."
 				// }
 			],
-			characters: []
+			characters: [],
+			favorites: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
+			addToFavorites: item => {
+				setStore({ favorites: getStore().favorites.concat(item) });
+			},
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},

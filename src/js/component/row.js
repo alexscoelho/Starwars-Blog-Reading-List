@@ -19,15 +19,17 @@ export const Row = props => {
 						</div>
 						<ul className="list-group list-group-flush">
 							<li className="list-group-item">{item.climate || item.gender}</li>
-							<li className="list-group-item">{item.population || item.mass}</li>
+							<li className="list-group-item">{item.population || item.height}</li>
 							<li className="list-group-item">{item.terrain || item.birth_year}</li>
 						</ul>
 						<div className="card-body">
 							<a href="#" className="card-link">
-								Card link
+								<button type="button" className="btn btn-info">
+									Learn more
+								</button>
 							</a>
 							<a href="#" className="card-link">
-								Another link
+								<i onClick={() => actions.addToFavorites(item.name)} className="far fa-heart" />
 							</a>
 						</div>
 					</div>
