@@ -26,6 +26,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			addToFavorites: item => {
 				setStore({ favorites: getStore().favorites.concat(item) });
 			},
+			handleDelete: index => {
+				const store = getStore();
+				setStore({ favorites: store.favorites.filter(current => current !== store.favorites[index]) });
+			},
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},

@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
+import { Context } from "../store/appContext";
+
 export const DropDown = props => {
 	const { favorites } = props;
+	const { store, actions } = useContext(Context);
+	// const handleDelete = index => {
+	// 	favorites.filter(current => current !== favorites[index]);
+	// };
 	const makeFavorites = () => {
 		return favorites.map((item, index) => {
 			return (
 				<a key={index} className="dropdown-item" href="#">
 					{item}
+					<span className="delete-icon">
+						<i onClick={() => actions.handleDelete(index)} className="fas fa-trash-alt" />
+					</span>
 				</a>
 			);
 		});
