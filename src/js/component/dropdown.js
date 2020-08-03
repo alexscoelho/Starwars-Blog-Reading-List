@@ -4,6 +4,15 @@ import PropTypes from "prop-types";
 
 export const DropDown = props => {
 	const { favorites } = props;
+	const makeFavorites = () => {
+		return favorites.map((item, index) => {
+			return (
+				<a key={index} className="dropdown-item" href="#">
+					{item}
+				</a>
+			);
+		});
+	};
 	return (
 		<div className="dropdown">
 			<button
@@ -13,18 +22,10 @@ export const DropDown = props => {
 				data-toggle="dropdown"
 				aria-haspopup="true"
 				aria-expanded="false">
-				{favorites}
+				Favorites
 			</button>
 			<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<a className="dropdown-item" href="#">
-					Action
-				</a>
-				<a className="dropdown-item" href="#">
-					Another action
-				</a>
-				<a className="dropdown-item" href="#">
-					Something else here
-				</a>
+				{makeFavorites()}
 			</div>
 		</div>
 	);
