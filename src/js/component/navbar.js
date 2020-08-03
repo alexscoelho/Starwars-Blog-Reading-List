@@ -1,33 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
+import { Context } from "../store/appContext";
+import { DropDown } from "../component/dropdown";
+
 export const Navbar = props => {
+	const { store, actions } = useContext(Context);
 	return (
 		<nav className="navbar navbar-light bg-light">
 			<div className="container">
 				<a className="navbar-brand">Navbar</a>
-				<div className="dropdown">
-					<button
-						className="btn btn-info dropdown-toggle"
-						type="button"
-						id="dropdownMenuButton"
-						data-toggle="dropdown"
-						aria-haspopup="true"
-						aria-expanded="false">
-						Favorites
-					</button>
-					<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<a className="dropdown-item" href="#">
-							Action
-						</a>
-						<a className="dropdown-item" href="#">
-							Another action
-						</a>
-						<a className="dropdown-item" href="#">
-							Something else here
-						</a>
-					</div>
-				</div>
+				<DropDown favorites={store.favorites} />
 			</div>
 		</nav>
 	);
