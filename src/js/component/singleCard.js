@@ -32,9 +32,6 @@ export const SingleCard = props => {
 								has been the industry standard dummy text ever since the 1500s, when an unknown printer
 								took a galley of type and scrambled it to make a type specimen book.
 							</p>
-							<p className="card-text">
-								<small className="text-muted">Last updated 3 mins ago</small>
-							</p>
 						</div>
 					</div>
 				</div>

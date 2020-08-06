@@ -7,6 +7,7 @@ import { Context } from "../store/appContext";
 export const DropDown = props => {
 	const { favorites } = props;
 	const { store, actions } = useContext(Context);
+
 	// const handleDelete = index => {
 	// 	favorites.filter(current => current !== favorites[index]);
 	// };
