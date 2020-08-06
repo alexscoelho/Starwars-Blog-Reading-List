@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 
 export const Row = props => {
-	const { title, data } = props;
+	const { title, data, type } = props;
 	const { store, actions } = useContext(Context);
 	const makeColumns = () => {
 		return data.map((item, index) => {
@@ -24,9 +24,11 @@ export const Row = props => {
 						</ul>
 						<div className="card-body">
 							<a href="#" className="card-link">
-								<button type="button" className="btn btn-info">
-									Learn more
-								</button>
+								<Link to={"/" + type + "/" + index}>
+									<button type="button" className="btn btn-info">
+										Learn more
+									</button>
+								</Link>
 							</a>
 							<a href="#" className="card-link">
 								<i onClick={() => actions.addToFavorites(item.name)} className="far fa-heart" />
@@ -47,5 +49,6 @@ export const Row = props => {
 
 Row.propTypes = {
 	title: PropTypes.string,
-	data: PropTypes.array
+	data: PropTypes.array,
+	type: PropTypes.string
 };

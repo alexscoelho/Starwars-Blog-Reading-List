@@ -1,25 +1,20 @@
 import React, { useState, useEffect, useContext } from "react";
-import PropTypes from "prop-types";
+import { useParams } from "react-router-dom";
+
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { SingleCard } from "../component/singleCard";
 
 export const Single = props => {
+	let { singleId, type } = useParams();
+	console.log(singleId);
+
 	const { store, actions } = useContext(Context);
+	let data = store[type].find((s, i) => i == singleId);
+
 	return (
-		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[props.match.params.theid].title}</h1>
-
-			<hr className="my-4" />
-
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
-				</span>
-			</Link>
+		<div className="container">
+			<SingleCard data={data} />
 		</div>
 	);
-};
-
-Single.propTypes = {
-	match: PropTypes.object
 };
