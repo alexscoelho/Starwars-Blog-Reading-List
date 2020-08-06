@@ -7,7 +7,16 @@ import { Context } from "../store/appContext";
 export const SingleCard = props => {
 	const { data } = props;
 	// console.log("singleData:", props.match.params.singleId);
+
 	const { store, actions } = useContext(Context);
+	let title;
+	let titles1 = ["Diameter", "Climate", "Gravity", "Terrain", "Population"];
+	let titles2 = ["Height", "Mass", "Gender", "Birth Year", "Eye Color"];
+	if (data.hasOwnProperty("diameter")) {
+		title = titles1;
+	} else {
+		title = titles2;
+	}
 	return (
 		<div className="container">
 			<div className="card mb-3">
@@ -19,14 +28,42 @@ export const SingleCard = props => {
 						<div className="card-body">
 							<h5 className="card-title">{data.name}</h5>
 							<p className="card-text">
-								This is a wider card with supporting text below as a natural lead-in to additional
-								content. This content is a little bit longer.
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+								has been the industry standard dummy text ever since the 1500s, when an unknown printer
+								took a galley of type and scrambled it to make a type specimen book.
 							</p>
 							<p className="card-text">
 								<small className="text-muted">Last updated 3 mins ago</small>
 							</p>
 						</div>
 					</div>
+				</div>
+			</div>
+
+			<div className="row">
+				<div className="col">
+					<h3>Name</h3>
+					<p>{data.name}</p>
+				</div>
+				<div className="col">
+					<h3>{title[0]}</h3>
+					<p>{data.diameter || data.height}</p>
+				</div>
+				<div className="col">
+					<h3>{title[1]}</h3>
+					<p>{data.climate || data.mass}</p>
+				</div>
+				<div className="col">
+					<h3>{title[2]}</h3>
+					<p>{data.gravity || data.gender}</p>
+				</div>
+				<div className="col">
+					<h3>{title[3]}</h3>
+					<p>{data.terrain || data.birth_year}</p>
+				</div>
+				<div className="col">
+					<h3>{title[4]}</h3>
+					<p>{data.population || data.eye_color}</p>
 				</div>
 			</div>
 		</div>
