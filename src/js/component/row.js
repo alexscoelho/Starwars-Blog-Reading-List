@@ -31,7 +31,7 @@ export const Row = props => {
 								</Link>
 							</a>
 							<a href="#" className="card-link">
-								<i onClick={() => actions.addToFavorites(item.name)} className="far fa-heart" />
+								<i onClick={() => actions.addToFavorites(item)} className="far fa-heart" />
 							</a>
 						</div>
 					</div>
