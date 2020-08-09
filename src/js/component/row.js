@@ -44,7 +44,7 @@ export const Row = props => {
 	return (
 		<div>
 			<h2>{title}</h2>
-			<div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4">{makeColumns()}</div>
+			<div className=" scrolling-wrapper row flex-row wrapper flex-nowrap mt-4 pb-4">{makeColumns()}</div>
 		</div>
 	);
 };
