@@ -22,7 +22,7 @@ export const DropDown = props => {
 			}
 			return (
 				<div key={index}>
-					<Link to={"/" + id + "/" + index}>
+					<Link to={"/" + id + "/" + item.id}>
 						<a className="dropdown-item" href="#">
 							{item.name}
 						</a>

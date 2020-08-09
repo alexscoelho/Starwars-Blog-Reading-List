@@ -7,8 +7,10 @@ import { Context } from "../store/appContext";
 export const Row = props => {
 	const { title, data, type } = props;
 	const { store, actions } = useContext(Context);
+
 	const makeColumns = () => {
 		return data.map((item, index) => {
+			item.id = index;
 			return (
 				<div key={index} className="col-5">
 					<div className="card">
