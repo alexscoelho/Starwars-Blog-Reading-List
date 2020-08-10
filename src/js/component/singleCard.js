@@ -18,11 +18,11 @@ export const SingleCard = props => {
 		title = titles2;
 	}
 	return (
-		<div className="container">
+		<div className="container mt-2">
 			<div className="card mb-3">
 				<div className="row no-gutters">
 					<div className="col-md-4">
-						<img src="..." className="card-img" alt="..." />
+						<img src="https://via.placeholder.com/800x600" className="card-img" alt="..." />
 					</div>
 					<div className="col-md-8">
 						<div className="card-body">
@@ -37,7 +37,7 @@ export const SingleCard = props => {
 				</div>
 			</div>
 
-			<div className="row">
+			<div className="row more-info">
 				<div className="col">
 					<h3>Name</h3>
 					<p>{data.name}</p>

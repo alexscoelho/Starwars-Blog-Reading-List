@@ -11,6 +11,7 @@ export const DropDown = props => {
 	// const handleDelete = index => {
 	// 	favorites.filter(current => current !== favorites[index]);
 	// };
+	// let emptyFav = "empty";
 	let id = null;
 
 	const makeFavorites = () => {
@@ -21,7 +22,7 @@ export const DropDown = props => {
 				id = "planets";
 			}
 			return (
-				<div key={index}>
+				<div key={index} className="fav-selector">
 					<Link to={"/" + id + "/" + item.id}>
 						<a className="dropdown-item" href="#">
 							{item.name}
@@ -46,7 +47,7 @@ export const DropDown = props => {
 				Favorites
 			</button>
 			<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				{makeFavorites()}
+				{favorites.length == 0 ? <span className="fav-empty">(empty)</span> : makeFavorites()}
 			</div>
 		</div>
 	);

@@ -14,7 +14,7 @@ export const Row = props => {
 			return (
 				<div key={index} className="col-5">
 					<div className="card">
-						<img src="..." className="card-img-top" alt="..." />
+						<img src="https://via.placeholder.com/400x200" className="card-img-top" alt="..." />
 						<div className="card-body">
 							<h5 className="card-title">{item.name}</h5>
 							{/* <p className="card-text">{item.description}</p> */}
