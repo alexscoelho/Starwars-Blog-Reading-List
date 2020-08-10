@@ -7,10 +7,16 @@ import { Context } from "../store/appContext";
 export const Row = props => {
 	const { title, data, type } = props;
 	const { store, actions } = useContext(Context);
+	// const favIcon = ["far fa-heart", "fas fa-heart"];
 
 	const makeColumns = () => {
 		return data.map((item, index) => {
 			item.id = index;
+			// item.favorite = false;
+			const handleClick = () => {
+				item.favorite = true;
+				actions.addToFavorites(item);
+			};
 			return (
 				<div key={index} className="col-5">
 					<div className="card">
@@ -33,7 +39,10 @@ export const Row = props => {
 								</Link>
 							</a>
 							<a href="#" className="card-link">
-								<i onClick={() => actions.addToFavorites(item)} className="far fa-heart" />
+								<i
+									onClick={() => handleClick()}
+									className={item.favorite ? "fas fa-heart" : "far fa-heart"}
+								/>
 							</a>
 						</div>
 					</div>

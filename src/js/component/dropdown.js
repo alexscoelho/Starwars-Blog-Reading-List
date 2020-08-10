@@ -21,6 +21,10 @@ export const DropDown = props => {
 			} else {
 				id = "planets";
 			}
+			const handleClick = () => {
+				item.favorite = false;
+				actions.handleDelete(index);
+			};
 			return (
 				<div key={index} className="fav-selector">
 					<Link to={"/" + id + "/" + item.id}>
@@ -29,7 +33,7 @@ export const DropDown = props => {
 						</a>
 					</Link>
 					<span className="delete-icon">
-						<i onClick={() => actions.handleDelete(index)} className="fas fa-trash-alt" />
+						<i onClick={() => handleClick()} className="fas fa-trash-alt" />
 					</span>
 				</div>
 			);
