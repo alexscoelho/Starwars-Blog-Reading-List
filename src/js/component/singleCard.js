@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 
 export const SingleCard = props => {
 	const { data } = props;
-	// console.log("singleData:", props.match.params.singleId);
+	console.log("data:", data);
 
 	const { store, actions } = useContext(Context);
 	let title;

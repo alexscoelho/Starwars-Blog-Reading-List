@@ -8,6 +8,7 @@ export const Row = props => {
 	const { title, data, type } = props;
 	const { store, actions } = useContext(Context);
 	// const favIcon = ["far fa-heart", "fas fa-heart"];
+	console.log("type:", type);
 
 	const makeColumns = () => {
 		return data.map((item, index) => {
@@ -33,6 +34,8 @@ export const Row = props => {
 						<div className="card-body">
 							<a href="#" className="card-link">
 								<Link to={"/" + type + "/" + index}>
+									{" "}
+									{/* type is defined in home */}
 									<button type="button" className="btn btn-info">
 										Learn more
 									</button>
