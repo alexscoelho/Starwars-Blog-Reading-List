@@ -37,7 +37,7 @@ export const Row = props => {
 									{" "}
 									{/* type is defined in home */}
 									<button type="button" className="btn btn-info">
-										Learn more
+										Learn more about it
 									</button>
 								</Link>
 							</a>
